@@ -43,6 +43,11 @@ namespace MusicPlayer
 
         }
 
-       
+        public void setVolume(string volume)
+        {   
+            string command = "setaudio music volume to " + volume;
+            mciSendString(command, null, 0, 0);
+        }
+
     }
 }

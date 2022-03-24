@@ -5,10 +5,16 @@ namespace MusicPlayer
         MusicPlayer media = new MusicPlayer();
         OpenFileDialog od = new OpenFileDialog();
         ProgressBar progressBar1 = new ProgressBar();
+        TrackBar myVolumeTrackbar = new TrackBar();
+
+
 
         public Form1()
         {
             InitializeComponent();
+            myVolumeTrackbar.Maximum = 1000;
+            myVolumeTrackbar.Minimum = 0;
+            myVolumeTrackbar.TickFrequency = 10;
         }
 
         private void openIt_Click(object sender, EventArgs e)
@@ -42,7 +48,16 @@ namespace MusicPlayer
             nameOf.Text = System.IO.Path.GetFileName(od.FileName) + "Paused";
         }
 
+        private void volumeLevel_Scroll(object sender, EventArgs e)
+        {
+            
+            media.setVolume(volumeLevel.Value.ToString());
+            volumeTxtBox.Text = volumeLevel.Value.ToString();
+        }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

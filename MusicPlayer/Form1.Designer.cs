@@ -33,6 +33,10 @@
             this.stopIt = new System.Windows.Forms.Button();
             this.pauseIt = new System.Windows.Forms.Button();
             this.nameOf = new System.Windows.Forms.TextBox();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.volumeLevel = new System.Windows.Forms.TrackBar();
+            this.volumeTxtBox = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.volumeLevel)).BeginInit();
             this.SuspendLayout();
             // 
             // openIt
@@ -86,11 +90,38 @@
             this.nameOf.Size = new System.Drawing.Size(349, 16);
             this.nameOf.TabIndex = 5;
             // 
+            // progressBar2
+            // 
+            this.progressBar2.Location = new System.Drawing.Point(194, 86);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(349, 23);
+            this.progressBar2.TabIndex = 7;
+            // 
+            // volumeLevel
+            // 
+            this.volumeLevel.Location = new System.Drawing.Point(194, 353);
+            this.volumeLevel.Maximum = 1000;
+            this.volumeLevel.Name = "volumeLevel";
+            this.volumeLevel.Size = new System.Drawing.Size(356, 45);
+            this.volumeLevel.TabIndex = 8;
+            this.volumeLevel.Scroll += new System.EventHandler(this.volumeLevel_Scroll);
+            // 
+            // volumeTxtBox
+            // 
+            this.volumeTxtBox.Location = new System.Drawing.Point(545, 353);
+            this.volumeTxtBox.Name = "volumeTxtBox";
+            this.volumeTxtBox.Size = new System.Drawing.Size(33, 23);
+            this.volumeTxtBox.TabIndex = 9;
+            this.volumeTxtBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.volumeTxtBox);
+            this.Controls.Add(this.volumeLevel);
+            this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.nameOf);
             this.Controls.Add(this.pauseIt);
             this.Controls.Add(this.stopIt);
@@ -98,6 +129,7 @@
             this.Controls.Add(this.openIt);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.volumeLevel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,5 +142,8 @@
         private Button stopIt;
         private Button pauseIt;
         private TextBox nameOf;
+        private ProgressBar progressBar2;
+        private TrackBar volumeLevel;
+        private TextBox volumeTxtBox;
     }
 }
