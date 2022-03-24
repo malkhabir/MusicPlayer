@@ -26,25 +26,22 @@ namespace MusicPlayer
 
         private void playIt_Click(object sender, EventArgs e)
         {
-            nameOf.Text = "Playing" + od.FileName.Trim;
+            nameOf.Text = "Playing" + System.IO.Path.GetFileName(od.FileName);
             media.play();
         }
 
         private void stopIt_Click(object sender, EventArgs e)
         {
             media.stop();
+            nameOf.Text = "";
         }
 
         private void pauseIt_Click(object sender, EventArgs e)
         {
             media.pause();
-            nameOf.Text = od.FileName + "Paused";
+            nameOf.Text = System.IO.Path.GetFileName(od.FileName) + "Paused";
         }
 
-        //private void nameofmusic()
-        //{
-        //    nameOf.Text = "Not working";
-        //}
 
 
     }
