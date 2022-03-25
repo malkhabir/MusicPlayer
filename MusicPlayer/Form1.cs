@@ -5,16 +5,17 @@ namespace MusicPlayer
         MusicPlayer media = new MusicPlayer();
         OpenFileDialog od = new OpenFileDialog();
         ProgressBar progressBar1 = new ProgressBar();
-        TrackBar myVolumeTrackbar = new TrackBar();
 
 
 
         public Form1()
         {
             InitializeComponent();
-            myVolumeTrackbar.Maximum = 1000;
-            myVolumeTrackbar.Minimum = 0;
-            myVolumeTrackbar.TickFrequency = 10;
+            volumeLevel.Maximum = 1000;
+            volumeLevel.Minimum = 0;
+            volumeLevel.TickFrequency = 100;
+            volumeLevel.Value = 4;
+            volumeTxtBox.Text = volumeLevel.Value.ToString();
         }
 
         private void openIt_Click(object sender, EventArgs e)
@@ -24,6 +25,7 @@ namespace MusicPlayer
             if (od.ShowDialog() == DialogResult.OK)
             {
                 media.open(od.FileName);
+                media.setVolume(volumeLevel.Value.ToString());
 
             }
 
