@@ -33,15 +33,15 @@
             this.stopIt = new System.Windows.Forms.Button();
             this.pauseIt = new System.Windows.Forms.Button();
             this.nameOf = new System.Windows.Forms.TextBox();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.volumeLevel = new System.Windows.Forms.TrackBar();
             this.volumeTxtBox = new System.Windows.Forms.TextBox();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.volumeLevel)).BeginInit();
             this.SuspendLayout();
             // 
             // openIt
             // 
-            this.openIt.Location = new System.Drawing.Point(194, 298);
+            this.openIt.Location = new System.Drawing.Point(32, 225);
             this.openIt.Name = "openIt";
             this.openIt.Size = new System.Drawing.Size(75, 23);
             this.openIt.TabIndex = 0;
@@ -51,7 +51,7 @@
             // 
             // playIt
             // 
-            this.playIt.Location = new System.Drawing.Point(387, 298);
+            this.playIt.Location = new System.Drawing.Point(225, 225);
             this.playIt.Name = "playIt";
             this.playIt.Size = new System.Drawing.Size(75, 23);
             this.playIt.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             // stopIt
             // 
-            this.stopIt.Location = new System.Drawing.Point(468, 298);
+            this.stopIt.Location = new System.Drawing.Point(306, 225);
             this.stopIt.Name = "stopIt";
             this.stopIt.Size = new System.Drawing.Size(75, 23);
             this.stopIt.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             // pauseIt
             // 
-            this.pauseIt.Location = new System.Drawing.Point(293, 298);
+            this.pauseIt.Location = new System.Drawing.Point(131, 225);
             this.pauseIt.Name = "pauseIt";
             this.pauseIt.Size = new System.Drawing.Size(75, 23);
             this.pauseIt.TabIndex = 3;
@@ -84,22 +84,15 @@
             this.nameOf.AllowDrop = true;
             this.nameOf.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.nameOf.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nameOf.Location = new System.Drawing.Point(194, 155);
+            this.nameOf.Location = new System.Drawing.Point(32, 31);
             this.nameOf.Name = "nameOf";
             this.nameOf.ReadOnly = true;
             this.nameOf.Size = new System.Drawing.Size(349, 16);
             this.nameOf.TabIndex = 5;
             // 
-            // progressBar2
-            // 
-            this.progressBar2.Location = new System.Drawing.Point(194, 86);
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(349, 23);
-            this.progressBar2.TabIndex = 7;
-            // 
             // volumeLevel
             // 
-            this.volumeLevel.Location = new System.Drawing.Point(194, 353);
+            this.volumeLevel.Location = new System.Drawing.Point(12, 279);
             this.volumeLevel.Maximum = 1000;
             this.volumeLevel.Name = "volumeLevel";
             this.volumeLevel.Size = new System.Drawing.Size(356, 45);
@@ -108,27 +101,33 @@
             // 
             // volumeTxtBox
             // 
-            this.volumeTxtBox.Location = new System.Drawing.Point(545, 353);
+            this.volumeTxtBox.Location = new System.Drawing.Point(363, 279);
             this.volumeTxtBox.Name = "volumeTxtBox";
             this.volumeTxtBox.Size = new System.Drawing.Size(33, 23);
             this.volumeTxtBox.TabIndex = 9;
-            this.volumeTxtBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(-1, 404);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(414, 23);
+            this.progressBar.TabIndex = 10;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(412, 424);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.volumeTxtBox);
             this.Controls.Add(this.volumeLevel);
-            this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.nameOf);
             this.Controls.Add(this.pauseIt);
             this.Controls.Add(this.stopIt);
             this.Controls.Add(this.playIt);
             this.Controls.Add(this.openIt);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Musicplayer";
             ((System.ComponentModel.ISupportInitialize)(this.volumeLevel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -142,8 +141,8 @@
         private Button stopIt;
         private Button pauseIt;
         private TextBox nameOf;
-        private ProgressBar progressBar2;
         private TrackBar volumeLevel;
         private TextBox volumeTxtBox;
+        private ProgressBar progressBar;
     }
 }
