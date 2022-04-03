@@ -1,25 +1,23 @@
 namespace MusicPlayer
 {
-    public partial class Form1 : Form
+    public partial class MediaToPlay : Form
     {
         MusicPlayer media = new MusicPlayer();
         OpenFileDialog od = new OpenFileDialog();
+        
 
-
-
-
-        public Form1()
+        public MediaToPlay()
         {
             InitializeComponent();
+            
             //Volume Params
             volumeLevel.Maximum = 1000;
             volumeLevel.Minimum = 0;
             volumeLevel.TickFrequency = 100;
             volumeLevel.Value = 4;
             volumeTxtBox.Text = volumeLevel.Value.ToString();
-            //Progress bar Params
-            progressBar.Minimum = 0;
-            progressBar.Maximum = 100;
+
+
         }
 
         private void openIt_Click(object sender, EventArgs e) //File dialog button event handler
@@ -32,6 +30,17 @@ namespace MusicPlayer
                 media.setVolume(volumeLevel.Value.ToString());
 
             }
+
+            // Convert from milliseconds to minutes 60,000 then output the value in soundLength textbox.
+            soundLength.Text = (float.Parse(media.getLength())/60000).ToString();
+
+
+            // Timer
+            timer1.Start();
+
+            //Progress bar Params
+            progressBar.Minimum = 0;
+            progressBar.Maximum = 100;
 
 
         }
@@ -61,11 +70,10 @@ namespace MusicPlayer
             volumeTxtBox.Text = volumeLevel.Value.ToString();
         }
 
-
-
-        private void getCurrentsec() //Gets position
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            progressBar.Value = media.getPosition();
+            positionofmusic.Text = ((float.Parse(media.getPosition())/float.Parse(media.getLength()))*100).ToString();
+            progressBar.Value = (int)(float.Parse(media.getPosition()) / float.Parse(media.getLength()) * 100);
         }
     }
 }

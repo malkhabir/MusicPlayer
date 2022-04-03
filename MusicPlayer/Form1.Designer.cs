@@ -1,6 +1,6 @@
 ﻿namespace MusicPlayer
 {
-    partial class Form1
+    partial class MediaToPlay
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.openIt = new System.Windows.Forms.Button();
             this.playIt = new System.Windows.Forms.Button();
             this.stopIt = new System.Windows.Forms.Button();
@@ -36,6 +37,9 @@
             this.volumeLevel = new System.Windows.Forms.TrackBar();
             this.volumeTxtBox = new System.Windows.Forms.TextBox();
             this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.soundLength = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.positionofmusic = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.volumeLevel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,11 +117,32 @@
             this.progressBar.Size = new System.Drawing.Size(414, 23);
             this.progressBar.TabIndex = 10;
             // 
-            // Form1
+            // soundLength
+            // 
+            this.soundLength.Location = new System.Drawing.Point(209, 115);
+            this.soundLength.Name = "soundLength";
+            this.soundLength.Size = new System.Drawing.Size(100, 23);
+            this.soundLength.TabIndex = 11;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // positionofmusic
+            // 
+            this.positionofmusic.Location = new System.Drawing.Point(234, 160);
+            this.positionofmusic.Name = "positionofmusic";
+            this.positionofmusic.Size = new System.Drawing.Size(100, 23);
+            this.positionofmusic.TabIndex = 12;
+            // 
+            // MediaToPlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(412, 424);
+            this.Controls.Add(this.positionofmusic);
+            this.Controls.Add(this.soundLength);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.volumeTxtBox);
             this.Controls.Add(this.volumeLevel);
@@ -126,7 +151,7 @@
             this.Controls.Add(this.stopIt);
             this.Controls.Add(this.playIt);
             this.Controls.Add(this.openIt);
-            this.Name = "Form1";
+            this.Name = "MediaToPlay";
             this.Text = "Musicplayer";
             ((System.ComponentModel.ISupportInitialize)(this.volumeLevel)).EndInit();
             this.ResumeLayout(false);
@@ -144,5 +169,8 @@
         private TrackBar volumeLevel;
         private TextBox volumeTxtBox;
         private ProgressBar progressBar;
+        private TextBox soundLength;
+        private System.Windows.Forms.Timer timer1;
+        private TextBox positionofmusic;
     }
 }
