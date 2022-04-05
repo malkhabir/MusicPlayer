@@ -40,6 +40,7 @@
             this.soundLength = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.positionofmusic = new System.Windows.Forms.TextBox();
+            this.soundLength1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.volumeLevel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,14 +120,15 @@
             // 
             // soundLength
             // 
-            this.soundLength.Location = new System.Drawing.Point(209, 115);
+            this.soundLength.Location = new System.Drawing.Point(289, 115);
             this.soundLength.Name = "soundLength";
-            this.soundLength.Size = new System.Drawing.Size(100, 23);
+            this.soundLength.Size = new System.Drawing.Size(32, 23);
             this.soundLength.TabIndex = 11;
             // 
             // timer1
             // 
-            this.timer1.Interval = 1;
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // positionofmusic
@@ -136,11 +138,19 @@
             this.positionofmusic.Size = new System.Drawing.Size(100, 23);
             this.positionofmusic.TabIndex = 12;
             // 
+            // soundLength1
+            // 
+            this.soundLength1.Location = new System.Drawing.Point(319, 115);
+            this.soundLength1.Name = "soundLength1";
+            this.soundLength1.Size = new System.Drawing.Size(49, 23);
+            this.soundLength1.TabIndex = 13;
+            // 
             // MediaToPlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(412, 424);
+            this.Controls.Add(this.soundLength1);
             this.Controls.Add(this.positionofmusic);
             this.Controls.Add(this.soundLength);
             this.Controls.Add(this.progressBar);
@@ -172,5 +182,6 @@
         private TextBox soundLength;
         private System.Windows.Forms.Timer timer1;
         private TextBox positionofmusic;
+        private TextBox soundLength1;
     }
 }

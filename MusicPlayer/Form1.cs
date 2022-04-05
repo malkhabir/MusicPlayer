@@ -10,7 +10,7 @@ namespace MusicPlayer
         {
             InitializeComponent();
             
-            //Volume Params
+            //Volume Parameters
             volumeLevel.Maximum = 1000;
             volumeLevel.Minimum = 0;
             volumeLevel.TickFrequency = 100;
@@ -20,7 +20,8 @@ namespace MusicPlayer
 
         }
 
-        private void openIt_Click(object sender, EventArgs e) //File dialog button event handler
+        //File dialog button event handler
+        private void openIt_Click(object sender, EventArgs e) 
         {
 
 
@@ -32,16 +33,19 @@ namespace MusicPlayer
             }
 
             // Convert from milliseconds to minutes 60,000 then output the value in soundLength textbox.
-            soundLength.Text = (float.Parse(media.getLength())/60000).ToString();
+            // soundLength.Text = (float.Parse(media.getLength())).ToString();
+            soundLength.Text = Math.Truncate(media.getLength()).ToString();
+            soundLength1.Text = (60 * (media.getLength() - Math.Truncate(media.getLength()))).ToString();
+
 
 
             // Timer
             timer1.Start();
 
-            //Progress bar Params
+            // Progress bar Params
             progressBar.Minimum = 0;
-            progressBar.Maximum = 100;
-
+            progressBar.Maximum = media.getLengthInt();
+             
 
         }
 
@@ -54,6 +58,7 @@ namespace MusicPlayer
         private void stopIt_Click(object sender, EventArgs e) //Event handler for stop button
         {
             media.stop();
+            soundLength.Text = "";
             nameOf.Text = "";
         }
 
@@ -72,8 +77,8 @@ namespace MusicPlayer
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            positionofmusic.Text = ((float.Parse(media.getPosition())/float.Parse(media.getLength()))*100).ToString();
-            progressBar.Value = (int)(float.Parse(media.getPosition()) / float.Parse(media.getLength()) * 100);
+            positionofmusic.Text = media.getPosition().ToString();
+            progressBar.Value = media.getPosition();
         }
     }
 }
